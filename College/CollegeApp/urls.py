@@ -1,0 +1,31 @@
+from django.urls import path
+from CollegeApp import views
+from django.contrib.auth import views as v
+urlpatterns=[
+	path('',views.home,name="hm"),
+	path('abt/',views.about,name="ab"),
+	path('flist/',views.factlist,name="fst1"),
+	path('fst/<int:m>/',views.factup,name="fsup"),
+	path('fstdlt/<int:n>/',views.factdl,name="fsd"),
+	path('fstviw/<int:a>/',views.factvw,name="fsvw"),
+	path('slist/',views.stulist,name="st1"),
+	path('st/<int:m>/',views.stuup,name="sup"),
+	path('studlt/<int:n>/',views.studl,name="sd"),
+	path('stuviw/<int:a>/',views.stuvw,name="svw"),
+	path('llist/',views.lelist,name="lst1"),
+	path('facst/<int:m>/',views.lfacup,name="flsup"),
+	path('fldlt/<int:n>/',views.fldl,name="fld"),
+	path('flviw/<int:a>/',views.flvw,name="flvw"),
+	path('stulist/',views.studentlist,name="slt1"),
+	path('slt/<int:m>/',views.stulup,name="slup"),
+	path('stuldlt/<int:n>/',views.stuldl,name="sld"),
+	path('stulviw/<int:a>/',views.stulvw,name="slvw"),
+	path('stuatlist/',views.stuattendlist,name="sta1"),
+	path('sat/<int:m>/',views.stauup,name="saup"),
+	path('stualdlt/<int:n>/',views.stualdl,name="sald"),
+	path('stuaviw/<int:a>/',views.stuavw,name="savw"),
+	path('fdb/',views.feedback,name="fd"),
+	path('login/',v.LoginView.as_view(template_name="html/login.html"),name="lg"),
+	path('logout/',v.LogoutView.as_view(template_name="html/logout.html"),name="lgo"),
+	path('rg/',views.usrreg,name="reg"),
+]

@@ -1,0 +1,41 @@
+
+{% extends 'html/base.html' %}
+{% load static %}
+{% block title %}Faculty Leave View {% endblock %}
+{% block content %}
+<div class="container mt-4">
+	<div class="card col-md-8 mx-auto shadow-lg">
+		<div class="card-body">
+			<h3>Faculty Leave View</h3>
+			<div class="row">
+				<div class="col">
+					<table class="table table-borderless">
+				<tr>
+					<th>Faculty Id</th>
+					<td>{{z.lfid}}</td>
+				</tr>
+				<tr>
+					<th>Faculty/Student</th>
+					<td>
+						{% if z.0 == 'FA' %}
+							<span class="badge badge-success">Faculty</span>
+							{% else %}
+							<span class="badge badge-danger">Student</span>
+							{% endif %}
+						
+					</td>
+				</tr>
+				<tr>
+					<th>Faculty Leave Date</th>
+					<td>{{z.leavefac}}</td>
+				</tr>
+				
+			</table>
+				</div>
+			</div>
+			<a href="{% url 'lst1' %}" class="btn btn-block btn-outline-info my-2">Back to List</a>
+		</div>
+	</div>
+</div>
+{% endblock %} 
+
